@@ -5,6 +5,7 @@ import {
   GET_DETAIL_COIN,
   GET_HISTORY_COIN,
   GET_INFORMATION_MARKET_CAP,
+  GET_NEWS_BY_QUERY,
 } from "./Action-Types";
 
 const coinGecko = {
@@ -52,6 +53,14 @@ const coinRanking = {
   },
 
   URL: "https://coinranking1.p.rapidapi.com/coins",
+};
+
+const bing = {
+  headers: {
+    "x-bingapis-sdk": "true",
+    "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
+    "x-rapidapi-key": "d280df9834mshbccf37a598cb8a8p1952eejsn29939f952305",
+  },
 };
 
 export const getCoins = () => {

@@ -10,6 +10,7 @@ import Detail from "./Pages/Detail";
 import Home from "./Pages/Home";
 import Exchanges from "./Pages/Exchanges";
 import Cryptocurrencies from "./Pages/Cryptocurrencies";
+import News from "./Pages/News";
 import Nav from "./Components/Nav";
 
 function App() {
@@ -23,9 +24,10 @@ function App() {
         <Cointainer>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/currencies/:id" element={<Detail />} />
+            <Route path="/cryptocurrencies/:id" element={<Detail />} />
             <Route path="/exchanges" element={<Exchanges />} />
             <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+            <Route path="/news" element={<News />} />
           </Routes>
         </Cointainer>
       </div>

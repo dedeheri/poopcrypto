@@ -20,7 +20,7 @@ const Main = ({ coins }) => {
 
   const router = (slug) => {
     navigate({
-      pathname: `/currencies/${slug}`,
+      pathname: `/cryptocurrencies/${slug}`,
     });
   };
 
@@ -43,7 +43,7 @@ const Main = ({ coins }) => {
           </tr>
         </thead>
         <tbody>
-          {coins?.map((coin) => (
+          {coins?.slice(0, 20).map((coin) => (
             <tr
               key={coin.id}
               className="hover:dark:bg-[#202020] hover:bg-gray-100 border-t border-b dark:border-slate-800 h-14"

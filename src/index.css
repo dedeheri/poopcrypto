@@ -6,9 +6,9 @@
 
 @layer components {
     .link {
-        @apply hover:bg-gray-100 hover:dark:bg-slate-800 px-2 rounded-lg p-1 transition duration-300
+        @apply hover:bg-gray-100 hover:dark:bg-[#252525]  px-2 rounded-lg p-1 transition duration-300
     }
     .active-link {
-        @apply bg-gray-100 dark:bg-slate-800 rounded-lg px-2 p-1
+        @apply bg-gray-100 dark:bg-[#252525] rounded-lg px-2 p-1
     }
 }

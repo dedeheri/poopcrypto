@@ -3,6 +3,8 @@ import {
   GET_DETAIL_COIN,
   FAILED_GET_DETAIL_COIN,
   GET_HISTORY_COIN,
+  REMOVE_DETAIL_COIN,
+  REMOVE_GET_HISTORY_COIN,
 } from "../Action/Action-Types";
 
 const initialState = {
@@ -45,12 +47,30 @@ const coin = (state = initialState, action) => {
         },
       };
     }
+    case REMOVE_DETAIL_COIN: {
+      return {
+        ...state,
+        detail: {
+          coin: {},
+          loading: true,
+        },
+      };
+    }
     case GET_HISTORY_COIN: {
       return {
         ...state,
         history: {
           timestamps: action.payload,
           loading: false,
+        },
+      };
+    }
+    case REMOVE_GET_HISTORY_COIN: {
+      return {
+        ...state,
+        history: {
+          timestamps: {},
+          loading: true,
         },
       };
     }
