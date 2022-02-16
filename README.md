@@ -1,9 +1,10 @@
 API CREDIT
-https://rapidapi.com/coingecko/api/coingecko/
-https://rapidapi.com/Coinranking/api/coinranking1/
-https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/
 
-library js
+1. https://rapidapi.com/coingecko/api/coingecko/
+2. https://rapidapi.com/Coinranking/api/coinranking1/
+3. https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/
+
+library js / NPM
 
 1. Axios
 2. Chart.js
