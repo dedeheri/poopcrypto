@@ -1,5 +1,5 @@
 const formatToIDR = (num) => {
-  const price = Number(num * 14290.05);
+  const price = num * 14321;
 
   return new Intl.NumberFormat("id-ID", {
     style: "currency",

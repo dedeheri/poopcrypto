@@ -44,6 +44,8 @@ const Detail = () => {
 
   const [days, setDays] = useState(1);
 
+  console.log(coin);
+
   // call api
   const { id } = useParams();
 

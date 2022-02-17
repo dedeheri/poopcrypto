@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // components
@@ -8,13 +8,17 @@ import Navbar from "./Components/Navbar";
 // pages
 import Detail from "./Pages/Detail";
 import Home from "./Pages/Home";
-import Exchanges from "./Pages/Exchanges";
-import Cryptocurrencies from "./Pages/Cryptocurrencies";
-import News from "./Pages/News";
 import Nav from "./Components/Nav";
+import { useDispatch } from "react-redux";
+import { getInformationMartketCap } from "./Content/Action/Coin";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getInformationMartketCap());
+  }, []);
 
   return (
     <Fragment>
@@ -25,9 +29,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cryptocurrencies/:id" element={<Detail />} />
-            <Route path="/exchanges" element={<Exchanges />} />
-            <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-            <Route path="/news" element={<News />} />
           </Routes>
         </Cointainer>
       </div>
