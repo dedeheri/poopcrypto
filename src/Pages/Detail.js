@@ -103,7 +103,7 @@ const Detail = () => {
     );
 
   return (
-    <div className="pt-10">
+    <div className="py-10">
       <div className="md:flex md:justify-between">
         {/* left */}
         <div className="space-y-2">
@@ -223,7 +223,7 @@ const Detail = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 md:gap-2 lg:gap-3 mt-10">
         <div className="col-span-3">
           <div className="bg-gray-100 text-black dark:text-white dark:bg-[#252525] flex h-8 w-36 space-x-2 rounded-lg py-1 px-2">
             <p
@@ -261,10 +261,12 @@ const Detail = () => {
               />
             </div>
           ) : (
-            <Line data={dataCharts} />
+            <div className="border rounded-lg p-2 dark:border-[#252525]  mt-5">
+              <Line data={dataCharts} />
+            </div>
           )}
         </div>
-        <div className="bg-gray-100 dark:bg-[#252525] p-3 rounded-lg space-y-5">
+        <div className="bg-gray-100 dark:bg-[#252525] p-3 rounded-lg space-y-5 mt-5 md:mt-12">
           <h1 className="font-semibold text-xl border-b dark:border-gray-700">
             {name} Statistik
           </h1>

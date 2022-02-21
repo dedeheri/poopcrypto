@@ -11,6 +11,7 @@ import Home from "./Pages/Home";
 import Nav from "./Components/Nav";
 import { useDispatch } from "react-redux";
 import { getInformationMartketCap } from "./Content/Action/Coin";
+import Footer from "./Components/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -31,6 +32,7 @@ function App() {
             <Route path="/cryptocurrencies/:id" element={<Detail />} />
           </Routes>
         </Cointainer>
+        <Footer />
       </div>
     </Fragment>
   );

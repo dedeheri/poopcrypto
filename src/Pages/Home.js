@@ -4,37 +4,26 @@ import Main from "../Components/Main";
 import { getCoins } from "../Content/Action/Coin";
 
 import { TailSpin } from "react-loader-spinner";
+import { LOADING_PERSIZE_COIN_COIN } from "../Content/Action/Action-Types";
 const Home = () => {
   const {
+    loadingPerZise,
     get: { coins, loading },
   } = useSelector((state) => state.coin);
 
-  const [page, setPage] = useState(1);
-  const [currency, setCurrency] = useState("usd");
   const [limit, setLimit] = useState(50);
+
+  console.log(coins);
 
   // Call API
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getCoins(currency, page, limit));
+    dispatch(getCoins("usd", 1, limit));
+
+    return () => dispatch({ type: LOADING_PERSIZE_COIN_COIN });
   }, [limit]);
 
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => setOffset(window.pageYOffset);
-
-    window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    // setLoadingScroll(true);
-    if (offset >= document.body.offsetHeight - window.innerHeight) {
-      setLimit(limit + 50);
-    }
-  }, [offset, limit]);
+  console.log(loadingPerZise);
 
   if (loading)
     return (
@@ -44,7 +33,28 @@ const Home = () => {
     );
 
   return (
-    <div className="pt-6">{<Main coins={coins} currency={currency} />}</div>
+    <div className="py-10">
+      <Main coins={coins} loadingPerZise={loadingPerZise} />
+      <div className="flex justify-end space-x-2">
+        {coins?.length + 1 > 100 ? (
+          <h1
+            onClick={() => setLimit(limit - 50)}
+            className="bg-gray-200 dark:bg-[#252525] dark:text-white text-black mt-5 p-2 px-3 rounded-lg cursor-pointer hover:bg-opacity-60"
+          >
+            Lebih Sedikit
+          </h1>
+        ) : null}
+
+        {coins?.length + 1 > 50 ? (
+          <h1
+            onClick={() => setLimit(limit + 50)}
+            className="bg-gray-200 dark:bg-[#252525] dark:text-white text-black mt-5 p-2 px-3 rounded-lg cursor-pointer  hover:bg-opacity-60"
+          >
+            Lebih banyak
+          </h1>
+        ) : null}
+      </div>
+    </div>
   );
 };
 

@@ -13,7 +13,7 @@ const nonActiveClassName = "text-md font-semibold link";
 const Navbar = ({ darkMode, setDarkMode }) => {
   const router = useNavigate();
   return (
-    <div className="border-b  dark:border-gray-800 font-roboto bg-white dark:bg-[#202020] px-2 md:px-0">
+    <div className="border-b dark:border-gray-800 font-roboto bg-white dark:bg-[#202020] px-2 md:px-0">
       <div className="max-w-7xl mx-auto flex h-14 cursor-pointer justify-between">
         {/* Left */}
         <div className="flex items-center  text-black dark:text-white">

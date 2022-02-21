@@ -7,7 +7,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 import { useNavigate } from "react-router-dom";
 
-const Main = ({ coins, currency }) => {
+const Main = ({ coins, loadingPerZise }) => {
   const columns = [
     "Rank",
     "Nama",
@@ -110,6 +110,39 @@ const Main = ({ coins, currency }) => {
           ))}
         </tbody>
       </table>
+
+      {loadingPerZise && (
+        <>
+          <div className="px-3 py-1 flex space-x-3 mt-3 animate-pulse">
+            <div className="h-8 w-10 bg-gray-200 dark:bg-[#252525] rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+          </div>
+          <div className="px-3 py-1 flex space-x-3 mt-3 animate-pulse">
+            <div className="h-8 w-10 bg-gray-200 dark:bg-[#252525] rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+          </div>
+          <div className="px-3 py-1 flex space-x-3 mt-3 animate-pulse">
+            <div className="h-8 w-10 bg-gray-200 dark:bg-[#252525] rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+          </div>
+          <div className="px-3 py-1 flex space-x-3 mt-3 animate-pulse">
+            <div className="h-8 w-10 bg-gray-200 dark:bg-[#252525] rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+            <div className="h-8  bg-gray-200 dark:bg-[#252525] w-1/2 rounded-md"></div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

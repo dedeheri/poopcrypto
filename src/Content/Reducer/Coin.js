@@ -5,6 +5,7 @@ import {
   GET_HISTORY_COIN,
   REMOVE_DETAIL_COIN,
   REMOVE_GET_HISTORY_COIN,
+  LOADING_PERSIZE_COIN_COIN,
 } from "../Action/Action-Types";
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
     loading: true,
     error: [],
   },
+  loadingPerZise: true,
 
   detail: {
     coin: [],
@@ -36,8 +38,17 @@ const coin = (state = initialState, action) => {
           coins: action.payload,
           loading: false,
         },
+        loadingPerZise: false,
       };
     }
+
+    case LOADING_PERSIZE_COIN_COIN: {
+      return {
+        ...state,
+        loadingPerZise: true,
+      };
+    }
+
     case GET_DETAIL_COIN: {
       return {
         ...state,
